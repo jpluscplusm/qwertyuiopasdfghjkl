@@ -2,7 +2,8 @@ name: test
 "on": push
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: some rubbish
 
 jobs:
   test_version_present:
