@@ -1,0 +1,38 @@
+name: test
+"on": push
+
+jobs:
+  test_version_present:
+    strategy:
+      matrix:
+        runner:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+        cue:
+          - v0.4.3
+          - v0.5.0
+          - v0.6.0-rc.1
+          - latest
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Setup CUE
+        uses: cue-lang/setup-cue@main
+        with:
+          version: ${{ matrix.cue }}
+      - name: Use CUE
+        run: "cue version"
+ 
+  test_version_missing:
+    strategy:
+      matrix:
+        runner:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Setup CUE
+        uses: cue-lang/setup-cue@main
+      - name: Use CUE
+        run: "cue version"
