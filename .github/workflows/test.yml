@@ -1,6 +1,9 @@
 name: test
 "on": push
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   test_version_present:
     strategy:
