@@ -21,7 +21,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Setup CUE
-        uses: cue-lang/setup-cue@main
+        uses: cue-lang/setup-cue@361fc34ea62988aabedd7be88c2635d243cc3713
         with:
           version: ${{ matrix.cue }}
       - name: Use CUE
@@ -37,6 +37,6 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Setup CUE
-        uses: cue-lang/setup-cue@main
+        uses: cue-lang/setup-cue@361fc34ea62988aabedd7be88c2635d243cc3713
       - name: Use CUE
         run: "cue version"
